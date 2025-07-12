@@ -1,3 +1,4 @@
+
 html {
   background-color: #000;
 }
@@ -42,7 +43,7 @@ header {
   font-weight: 700;
   font-size: 4rem;
   color: #00bcd4;
-  text-shadow: 0 0 10px #00bcd4, 0 0 20px #00bcd4, 0 0 30px #00bcd4;
+  text-shadow: 0 0 10px #00bcd4, 0 0 20px #00bcd4, 0 0 30px #005577;
   letter-spacing: 3px;
   margin: 0;
 }
@@ -81,13 +82,13 @@ input {
 
 button {
   padding: 0.6rem 1.2rem;
-  background: #00ffff;
+  background: #00bcd4;
   color: #111;
   font-weight: 700;
   border: none;
   border-radius: 5px;
   cursor: pointer;
-  box-shadow: 0 0 10px #00ffff;
+  box-shadow: 0 0 10px #00bcd4;
   transition: background 0.2s ease;
   font-family: 'Orbitron', sans-serif;
   text-transform: uppercase;
@@ -95,7 +96,7 @@ button {
 }
 
 button:hover {
-  background: #00cccc;
+  background: #0099aa;
 }
 
 #game {
@@ -105,7 +106,7 @@ button:hover {
   padding: 2rem;
   background: rgba(20, 20, 20, 0.85);
   border-radius: 10px;
-  box-shadow: 0 0 15px #00ffff55;
+  box-shadow: 0 0 15px #00bcd455;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -113,8 +114,8 @@ button:hover {
 
 #questionText {
   font-size: 1.5rem;
-  color: #00ffff;
-  text-shadow: 0 0 10px #00ffff;
+  color: #00bcd4;
+  text-shadow: 0 0 10px #00bcd4;
   margin: 1rem 0;
   text-align: center;
 }
@@ -131,9 +132,9 @@ button:hover {
   max-width: 400px;
   margin-top: 2rem;
   background: #000;
-  border: 1px solid #00ffff55;
+  border: 1px solid #00bcd455;
   padding: 1rem;
-  color: #00ffff;
+  color: #00bcd4;
   font-family: monospace;
   font-size: 0.95rem;
   border-radius: 8px;

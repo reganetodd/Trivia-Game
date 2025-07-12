@@ -3,16 +3,20 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Trivia Game</title>
+  <title>Koopan Trivia</title>
   <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@500&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
+  <header>
+    <h1 class="site-title">Koopan</h1>
+  </header>
+
   <div class="container">
-    <h1>Trivia Infinite</h1>
-    <label for="name">Enter your name:</label>
-    <input type="text" id="name" placeholder="Regan" />
-    <button onclick="joinGame()">Join Game</button>
+    <div class="join-box">
+      <input type="text" id="name" placeholder="Your Name" />
+      <button onclick="joinGame()">Join Game</button>
+    </div>
   </div>
 
   <script src="script.js"></script>

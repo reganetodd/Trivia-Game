@@ -1,38 +1,27 @@
-let socket;
-
+// Establish socket connection and swap screens
 function connect() {
-  const name = document.getElementById("nameInput").value;
-  if (!name) {
-    alert("Enter your name");
+  const playerName = document.getElementById("nameInput").value;
+  if (!playerName) {
+    alert("Please enter your name!");
     return;
   }
 
-  // Replace this with your actual Replit backend URL
-  const url = "wss://your-replit-name.your-username.repl.co/ws/" + name;
-  socket = new WebSocket(url);
+  // Show game UI, update status
+  document.getElementById("game").style.display = "block";
+  document.getElementById("status").innerText = `Connecting as "${playerName}"…`;
 
-  socket.onopen = () => {
-    document.getElementById("game").style.display = "block";
-    document.getElementById("status").innerText = "Connected!";
-  };
+  // Example socket setup (adjust URL/logic as needed)
+  const socket = io("https://your-trivia-server.com");
+  socket.emit("join", { name: playerName });
 
-  socket.onmessage = (event) => {
-    const data = JSON.parse(event.data);
-    if (data.question) {
-      document.getElementById("question").innerText = data.question;
-    }
-    if (data.feedback) {
-      document.getElementById("status").innerText = data.feedback;
-    }
-  };
+  socket.on("joined", () => {
+    document.getElementById("status").innerText = "Waiting for other players…";
+  });
 
-  socket.onclose = () => {
-    document.getElementById("status").innerText = "Disconnected.";
-  };
-}
+  socket.on("question", (q) => {
+    // TODO: render question & answers
+    console.log("New question:", q);
+  });
 
-function submitAnswer() {
-  const answer = document.getElementById("answerInput").value;
-  socket.send(JSON.stringify({ answer }));
-  document.getElementById("answerInput").value = "";
+  // handle further socket events…
 }

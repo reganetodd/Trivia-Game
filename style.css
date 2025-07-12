@@ -4,14 +4,13 @@ body {
   padding: 0;
   background: radial-gradient(circle at center, #111, #000);
   height: 100vh;
-  font-family: 'Orbitron', sans-serif; /* fallback for general text */
+  font-family: 'Orbitron', sans-serif;
   display: flex;
   flex-direction: column;
   align-items: center;
   color: #fff;
 }
 
-/* Header */
 header {
   width: 100%;
   text-align: center;
@@ -19,10 +18,7 @@ header {
   background: transparent;
 }
 
-/* Title in Capitana Black */
 .site-title {
-  font-family: 'Capitana', serif;
-  font-weight: 700;        /* Black */
   font-size: 3rem;
   color: #00ffff;
   text-shadow: 0 0 10px #00ffff, 0 0 20px #00ffff;
@@ -30,7 +26,6 @@ header {
   margin: 0;
 }
 
-/* Centered container */
 .container {
   flex: 1;
   display: flex;
@@ -38,7 +33,6 @@ header {
   align-items: center;
 }
 
-/* Join box styling */
 .join-box {
   display: flex;
   gap: 0.75rem;
@@ -49,7 +43,6 @@ header {
   box-shadow: 0 0 12px #8000ff55;
 }
 
-/* Inputs in Capitana Regular */
 input {
   padding: 0.6rem 1rem;
   border-radius: 5px;
@@ -59,11 +52,8 @@ input {
   font-size: 1rem;
   border: 1px solid #555;
   box-shadow: 0 0 5px #8000ff;
-  font-family: 'Capitana', serif;
-  font-weight: 400;        /* Regular */
 }
 
-/* Buttons in Capitana Regular */
 button {
   padding: 0.6rem 1.2rem;
   background: #00ffff;
@@ -74,8 +64,6 @@ button {
   cursor: pointer;
   box-shadow: 0 0 10px #00ffff;
   transition: background 0.2s ease;
-  font-family: 'Capitana', serif;
-  font-weight: 400;        /* Regular */
 }
 
 button:hover {

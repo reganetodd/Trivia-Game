@@ -6,10 +6,21 @@
   <title>Koopan Trivia</title>
 
   <!-- Fonts -->
-  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@500&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@600;700&display=swap" rel="stylesheet">
   <link href="https://fonts.googleapis.com/css2?family=Capitana:wght@400;700&display=swap" rel="stylesheet">
 
+  <!-- Styles -->
   <link rel="stylesheet" href="style.css">
+
+  <!-- Mouse glow script -->
+  <script>
+    document.addEventListener('mousemove', e => {
+      const x = (e.clientX / window.innerWidth) * 100;
+      const y = (e.clientY / window.innerHeight) * 100;
+      document.body.style.setProperty('--mouse-x', `${x}%`);
+      document.body.style.setProperty('--mouse-y', `${y}%`);
+    });
+  </script>
 </head>
 <body>
   <header>
@@ -18,17 +29,25 @@
 
   <div class="container">
     <div class="join-box">
-      <!-- ID changed to match JS -->
-      <input type="text" id="nameInput" placeholder="Your Name" />
-      <!-- onclick now matches the JS function name -->
+      <label for="nameInput" style="font-weight: bold; color: #ccc;">Your Name:</label>
+      <input type="text" id="nameInput" placeholder="Enter your name" />
       <button onclick="connect()">Join Game</button>
     </div>
   </div>
 
-  <!-- Hidden game area; shown once connected -->
-  <div id="game" style="display:none;">
+  <div id="game" style="display: none;">
     <p id="status">Connecting…</p>
-    <!-- TODO: your question UI goes here -->
+
+    <div class="question-box">
+      <h2 id="questionText">Waiting for question…</h2>
+      <input type="text" id="answerInput" placeholder="Type your answer…" />
+      <button onclick="submitAnswer()">Submit Answer</button>
+    </div>
+
+    <div class="leaderboard-box">
+      <h3>Leaderboard</h3>
+      <pre id="leaderboard">(Waiting for scores…)</pre>
+    </div>
   </div>
 
   <script src="script.js"></script>
